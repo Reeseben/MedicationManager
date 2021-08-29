@@ -14,6 +14,12 @@
 		33A61CB9258F2E6E00B62B2F /* MedicationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33A61CB7258F2E6E00B62B2F /* MedicationManager.xcdatamodeld */; };
 		33A61CBB258F2E7000B62B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A61CBA258F2E7000B62B2F /* Assets.xcassets */; };
 		33A61CBE258F2E7000B62B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A61CBC258F2E7000B62B2F /* LaunchScreen.storyboard */; };
+		B50DFFF626B062CF00969DF2 /* TakenDate+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50DFFF526B062CF00969DF2 /* TakenDate+Convenience.swift */; };
+		B517411626B1B5F5005B6D69 /* TodayIFeelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B517411526B1B5F5005B6D69 /* TodayIFeelViewController.swift */; };
+		B517411826B1C86B005B6D69 /* MoodSurvey+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B517411726B1C86B005B6D69 /* MoodSurvey+Convenience.swift */; };
+		B517411A26B1C9FB005B6D69 /* MoodSurveyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B517411926B1C9FB005B6D69 /* MoodSurveyController.swift */; };
+		B517411C26B1DC75005B6D69 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B517411B26B1DC75005B6D69 /* StringConstants.swift */; };
+		B517411E26B1F4CA005B6D69 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B517411D26B1F4CA005B6D69 /* NotificationScheduler.swift */; };
 		B58C514926AF1BC9008E8E98 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C514826AF1BC9008E8E98 /* MedicationDetailViewController.swift */; };
 		B58C514C26AF1C02008E8E98 /* MedicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C514B26AF1C02008E8E98 /* MedicationTableViewCell.swift */; };
 		B58C514F26AF2214008E8E98 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C514E26AF2214008E8E98 /* CoreDataStack.swift */; };
@@ -32,6 +38,12 @@
 		33A61CBA258F2E7000B62B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33A61CBD258F2E7000B62B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33A61CBF258F2E7000B62B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B50DFFF526B062CF00969DF2 /* TakenDate+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TakenDate+Convenience.swift"; sourceTree = "<group>"; };
+		B517411526B1B5F5005B6D69 /* TodayIFeelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayIFeelViewController.swift; sourceTree = "<group>"; };
+		B517411726B1C86B005B6D69 /* MoodSurvey+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodSurvey+Convenience.swift"; sourceTree = "<group>"; };
+		B517411926B1C9FB005B6D69 /* MoodSurveyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSurveyController.swift; sourceTree = "<group>"; };
+		B517411B26B1DC75005B6D69 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		B517411D26B1F4CA005B6D69 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		B58C514826AF1BC9008E8E98 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewController.swift; sourceTree = "<group>"; };
 		B58C514B26AF1C02008E8E98 /* MedicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewCell.swift; sourceTree = "<group>"; };
 		B58C514E26AF2214008E8E98 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -122,6 +134,7 @@
 			children = (
 				33A61CB2258F2E6E00B62B2F /* MedicationListViewController.swift */,
 				B58C514826AF1BC9008E8E98 /* MedicationDetailViewController.swift */,
+				B517411526B1B5F5005B6D69 /* TodayIFeelViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -130,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				B58C515226AF2E4D008E8E98 /* MedicationController.swift */,
+				B517411926B1C9FB005B6D69 /* MoodSurveyController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -140,6 +154,8 @@
 				33A61CB7258F2E6E00B62B2F /* MedicationManager.xcdatamodeld */,
 				B58C514E26AF2214008E8E98 /* CoreDataStack.swift */,
 				B58C515026AF2804008E8E98 /* Medication+Convenience.swift */,
+				B50DFFF526B062CF00969DF2 /* TakenDate+Convenience.swift */,
+				B517411726B1C86B005B6D69 /* MoodSurvey+Convenience.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -156,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				B58C515526AF3822008E8E98 /* DateFormatter.swift */,
+				B517411B26B1DC75005B6D69 /* StringConstants.swift */,
+				B517411D26B1F4CA005B6D69 /* NotificationScheduler.swift */,
 			);
 			path = "Helpers and Extensions";
 			sourceTree = "<group>";
@@ -230,16 +248,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B517411A26B1C9FB005B6D69 /* MoodSurveyController.swift in Sources */,
 				B58C514F26AF2214008E8E98 /* CoreDataStack.swift in Sources */,
 				B58C514926AF1BC9008E8E98 /* MedicationDetailViewController.swift in Sources */,
+				B517411626B1B5F5005B6D69 /* TodayIFeelViewController.swift in Sources */,
 				33A61CB3258F2E6E00B62B2F /* MedicationListViewController.swift in Sources */,
 				33A61CAF258F2E6E00B62B2F /* AppDelegate.swift in Sources */,
 				B58C515126AF2804008E8E98 /* Medication+Convenience.swift in Sources */,
 				B58C515626AF3822008E8E98 /* DateFormatter.swift in Sources */,
+				B517411C26B1DC75005B6D69 /* StringConstants.swift in Sources */,
 				33A61CB9258F2E6E00B62B2F /* MedicationManager.xcdatamodeld in Sources */,
+				B517411826B1C86B005B6D69 /* MoodSurvey+Convenience.swift in Sources */,
 				B58C514C26AF1C02008E8E98 /* MedicationTableViewCell.swift in Sources */,
+				B517411E26B1F4CA005B6D69 /* NotificationScheduler.swift in Sources */,
 				33A61CB1258F2E6E00B62B2F /* SceneDelegate.swift in Sources */,
 				B58C515326AF2E4D008E8E98 /* MedicationController.swift in Sources */,
+				B50DFFF626B062CF00969DF2 /* TakenDate+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P37KHYUXQV;
+				DEVELOPMENT_TEAM = A5WKQ59823;
 				INFOPLIST_FILE = MedicationManager/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -406,7 +430,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P37KHYUXQV;
+				DEVELOPMENT_TEAM = A5WKQ59823;
 				INFOPLIST_FILE = MedicationManager/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

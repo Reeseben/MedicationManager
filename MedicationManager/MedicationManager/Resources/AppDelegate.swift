@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +15,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { authorized, error in
+            
+            if let error = error{
+                print("Error \(error)")
+            }
+            
+            if authorized {
+                UNUserNotificationCenter.current().delegate = self
+                self.setNotificationCategories()
+                print("Yeet")
+            } else {
+                print("Not Yeet")
+            }
+        }
+        
+        
+        
+        
         return true
+    }
+    
+    private func setNotificationCategories(){
+        let markTakenAction = UNNotificationAction(identifier: StringConstants.markTakenNotificationActionIdentifier, title: StringConstants.accept, options: UNNotificationActionOptions(rawValue: 0))
+        
+        let ignoreAction = UNNotificationAction(identifier: StringConstants.ignoreNotificationActionIdentifier, title: StringConstants.ignore, options: UNNotificationActionOptions(rawValue: 0))
+        
+        let medicationActionsCategory = UNNotificationCategory(identifier: StringConstants.notificationCategoryIdentifier, actions: [markTakenAction, ignoreAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
+        
+        UNUserNotificationCenter.current().setNotificationCategories([medicationActionsCategory])
     }
 
     // MARK: UISceneSession Lifecycle
@@ -79,3 +108,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        NotificationCenter.default.post(name: Notification.Name(StringConstants.reminderReceivedNotificationName), object: nil)
+        
+        completionHandler([.sound, .banner])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if response.actionIdentifier == StringConstants.markTakenNotificationActionIdentifier,
+           let medicationID = response.notification.request.content.userInfo[StringConstants.medicationID] as? String {
+            //BEREK - Mark medication as taken
+            MedicationController.shared.markMedication(with: medicationID)
+            completionHandler()
+            
+        }
+    }
+    
+}//End of Extension

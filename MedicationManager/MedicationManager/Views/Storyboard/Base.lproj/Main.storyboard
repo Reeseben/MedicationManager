@@ -9,16 +9,96 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--TodayI Feel View Controller-->
+        <scene sceneID="3Nu-WN-LvJ">
+            <objects>
+                <viewController storyboardIdentifier="todayIFeelViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lkQ-Uw-wgd" customClass="TodayIFeelViewController" customModule="MedicationManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i8p-E5-gRw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfw-na-ms9">
+                                <rect key="frame" x="15" y="59" width="29" height="28"/>
+                                <state key="normal" image="xmark.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                </state>
+                                <connections>
+                                    <action selector="CloseButtonTapped:" destination="lkQ-Uw-wgd" eventType="touchUpInside" id="6Z8-dZ-fcd"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="c6M-Nh-zfd">
+                                <rect key="frame" x="145" y="211.5" width="124" height="483"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdZ-jk-lfo">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="124.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FdZ-jk-lfo" secondAttribute="height" multiplier="1:1" id="hVn-4H-Uj7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <state key="normal" title="😃"/>
+                                        <connections>
+                                            <action selector="moodButtonTapped:" destination="lkQ-Uw-wgd" eventType="touchUpInside" id="RZo-y6-Szj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8SA-wT-Vij">
+                                        <rect key="frame" x="0.0" y="179.5" width="124" height="124"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <state key="normal" title="😐"/>
+                                        <connections>
+                                            <action selector="moodButtonTapped:" destination="lkQ-Uw-wgd" eventType="touchUpInside" id="SOO-O3-8pB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="949-y7-Bmj">
+                                        <rect key="frame" x="0.0" y="358.5" width="124" height="124.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <state key="normal" title="🙁"/>
+                                        <connections>
+                                            <action selector="moodButtonTapped:" destination="lkQ-Uw-wgd" eventType="touchUpInside" id="Jhj-3n-3eB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today I am feeling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFO-5N-K9X">
+                                <rect key="frame" x="41.5" y="150.5" width="331" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yeZ-tT-aYU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wfw-na-ms9" firstAttribute="leading" secondItem="yeZ-tT-aYU" secondAttribute="leading" constant="15" id="69z-8a-xG6"/>
+                            <constraint firstItem="MFO-5N-K9X" firstAttribute="centerX" secondItem="yeZ-tT-aYU" secondAttribute="centerX" id="Bg9-q2-1WP"/>
+                            <constraint firstItem="wfw-na-ms9" firstAttribute="top" secondItem="yeZ-tT-aYU" secondAttribute="top" constant="15" id="Jqr-tl-jd1"/>
+                            <constraint firstItem="c6M-Nh-zfd" firstAttribute="centerY" secondItem="yeZ-tT-aYU" secondAttribute="centerY" id="jed-M0-hYf"/>
+                            <constraint firstItem="c6M-Nh-zfd" firstAttribute="centerX" secondItem="yeZ-tT-aYU" secondAttribute="centerX" id="oL6-Qz-Taz"/>
+                            <constraint firstItem="c6M-Nh-zfd" firstAttribute="top" secondItem="MFO-5N-K9X" secondAttribute="bottom" constant="24" id="pqc-O9-mP4"/>
+                            <constraint firstItem="MFO-5N-K9X" firstAttribute="width" secondItem="i8p-E5-gRw" secondAttribute="width" multiplier="0.8" id="qXX-tg-zEs"/>
+                            <constraint firstItem="c6M-Nh-zfd" firstAttribute="width" secondItem="yeZ-tT-aYU" secondAttribute="width" multiplier="0.3" id="sZe-bb-W2a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="badButton" destination="949-y7-Bmj" id="vm9-CX-7je"/>
+                        <outlet property="goodButton" destination="FdZ-jk-lfo" id="mbI-4e-u24"/>
+                        <outlet property="mehButton" destination="8SA-wT-Vij" id="nQi-t6-8Ck"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VAA-Nq-Tam" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1690" y="-607"/>
+        </scene>
         <!--Medication List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MedicationListViewController" customModule="MedicationManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jY4-1D-JQk">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="165.5" width="414" height="696.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="medicationCell" rowHeight="80" id="FNn-GR-RTN" customClass="MedicationTableViewCell" customModule="MedicationManager" customModuleProvider="target">
@@ -77,14 +157,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9V2-Qy-od1">
+                                <rect key="frame" x="15" y="88" width="384" height="77.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today I feel:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3b5-86-BxW">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="77.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRY-s4-alD">
+                                        <rect key="frame" x="306.5" y="0.0" width="77.5" height="77.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bRY-s4-alD" secondAttribute="height" multiplier="1:1" id="fad-ee-JhO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <state key="normal" title="😃"/>
+                                        <connections>
+                                            <action selector="moodButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6CR-gS-J7q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jY4-1D-JQk" firstAttribute="top" secondItem="9V2-Qy-od1" secondAttribute="bottom" id="0t8-lv-1IA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jY4-1D-JQk" secondAttribute="bottom" id="4Au-VA-E98"/>
                             <constraint firstItem="jY4-1D-JQk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5p5-Ew-sLe"/>
-                            <constraint firstItem="jY4-1D-JQk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="De9-fk-6he"/>
+                            <constraint firstItem="9V2-Qy-od1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VH2-69-Ag9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9V2-Qy-od1" secondAttribute="trailing" constant="15" id="XOp-qs-txd"/>
+                            <constraint firstItem="9V2-Qy-od1" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.1" id="k7O-hk-JFW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jY4-1D-JQk" secondAttribute="trailing" id="y7u-04-XLb"/>
+                            <constraint firstItem="9V2-Qy-od1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="zwQ-T9-4CP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fiH-ID-C2Z">
@@ -95,10 +201,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="moodButton" destination="bRY-s4-alD" id="GSb-2S-p0H"/>
                         <outlet property="tableView" destination="jY4-1D-JQk" id="88h-DG-nhk"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="88.392857142857139"/>
         </scene>
@@ -188,6 +294,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square" catalog="system" width="128" height="114"/>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

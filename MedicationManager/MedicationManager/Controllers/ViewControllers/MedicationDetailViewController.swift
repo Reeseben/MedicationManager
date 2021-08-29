@@ -20,6 +20,7 @@ class MedicationDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(reminderFired), name: Notification.Name(StringConstants.reminderReceivedNotificationName), object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -27,7 +28,7 @@ class MedicationDetailViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = medicationTextField.text, !name.isEmpty else { return }
         if let medication = medication {
-            MedicationController.shared.updateMedication(medication: medication, name: name, date: datePicker.date)
+            MedicationController.shared.updateMedicationDetails(medication: medication, name: name, date: datePicker.date)
         } else {
             MedicationController.shared.createMedication(name: name, timeOfDay: datePicker.date)
         }
@@ -39,6 +40,13 @@ class MedicationDetailViewController: UIViewController {
         guard let medication = medication else { return }
         medicationTextField.text = medication.name
         datePicker.date = medication.timeOfDay ?? Date()
+    }
+    
+    @objc func reminderFired() {
+        view.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.view.backgroundColor = .systemBackground
+        }
     }
 
 }//End Of Class
